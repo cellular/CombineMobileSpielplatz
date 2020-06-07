@@ -121,6 +121,7 @@
                     <connections>
                         <segue destination="AGJ-0u-JON" kind="relationship" relationship="viewControllers" id="2eI-KH-UMa"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="pxX-ct-tcn"/>
+                        <segue destination="DKK-ab-fnr" kind="relationship" relationship="viewControllers" id="J5N-ka-pfw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9e-c2-hr5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -212,9 +213,55 @@
             </objects>
             <point key="canvasLocation" x="-277.1484375" y="535.9375"/>
         </scene>
+        <!--Network-->
+        <scene sceneID="TDN-ZX-YxS">
+            <objects>
+                <viewController id="DKK-ab-fnr" customClass="NetworkViewController" customModule="CombineMobileSpielplatz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="myB-dk-2WF">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="xfO-VV-WUE">
+                                <rect key="frame" x="20" y="0.0" width="984" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="LRG-XP-zut"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="O7F-XL-AX3">
+                                <rect key="frame" x="20" y="64" width="984" height="634"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Gee-j6-RjO" firstAttribute="trailing" secondItem="O7F-XL-AX3" secondAttribute="trailing" constant="20" id="6we-8v-uQM"/>
+                            <constraint firstItem="O7F-XL-AX3" firstAttribute="top" secondItem="xfO-VV-WUE" secondAttribute="bottom" constant="20" id="HAY-a3-BTj"/>
+                            <constraint firstItem="O7F-XL-AX3" firstAttribute="leading" secondItem="Gee-j6-RjO" secondAttribute="leading" constant="20" id="MRp-Wn-uNF"/>
+                            <constraint firstItem="xfO-VV-WUE" firstAttribute="top" secondItem="Gee-j6-RjO" secondAttribute="top" id="NIT-3F-pyN"/>
+                            <constraint firstItem="Gee-j6-RjO" firstAttribute="trailing" secondItem="xfO-VV-WUE" secondAttribute="trailing" constant="20" id="Omq-pQ-5I4"/>
+                            <constraint firstItem="xfO-VV-WUE" firstAttribute="leading" secondItem="Gee-j6-RjO" secondAttribute="leading" constant="20" id="ZHD-ZJ-pP2"/>
+                            <constraint firstItem="Gee-j6-RjO" firstAttribute="bottom" secondItem="O7F-XL-AX3" secondAttribute="bottom" constant="20" id="dUb-T1-AOG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gee-j6-RjO"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Network" image="wifi" catalog="system" id="dql-vx-S0c"/>
+                    <connections>
+                        <outlet property="searchBar" destination="xfO-VV-WUE" id="VMa-tF-TDu"/>
+                        <outlet property="textView" destination="O7F-XL-AX3" id="KnH-es-WyT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NxY-Ft-Dnm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-277.1484375" y="1236.71875"/>
+        </scene>
     </scenes>
     <resources>
         <image name="location" catalog="system" width="128" height="115"/>
         <image name="square.grid.3x2" catalog="system" width="128" height="80"/>
+        <image name="wifi" catalog="system" width="128" height="92"/>
     </resources>
 </document>
