@@ -8,6 +8,9 @@
 
 import Foundation
 
+struct WeatherError: Decodable, Error {
+    var errorText: String
+}
 
 struct WeatherResult: Decodable {
     var coord: Coord?
@@ -26,9 +29,12 @@ struct WeatherResult: Decodable {
                 result.append("\($0.main ?? "") ->  \($0.description ?? "")\n")
             }
         }
-        let temp = Measurement(value: main?.temp ?? 0.0, unit: UnitTemperature.fahrenheit)
+        let temp = Measurement(value: main?.temp ?? 0.0, unit: UnitTemperature.kelvin)
         let formatter = MeasurementFormatter()
-        result.append("Temp: \(formatter.string(from: temp))")
+        formatter.unitOptions = .providedUnit
+        result.append("Temp: \(formatter.string(from: temp.converted(to: .celsius)))\n")
+        result.append("Preasure: \(main?.preasure ?? 0) hPa\n")
+        result.append("Humidity: \(main?.humidity ?? 0)%")
         return result
     }
 }
